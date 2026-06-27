@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, Layout, Shield } from "lucide-react";
@@ -18,6 +19,12 @@ export default function CreateAlbumPage() {
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    if (localStorage.getItem("admin_authenticated") !== "true") {
+      window.location.href = "/dashboard/login";
+    }
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

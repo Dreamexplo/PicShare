@@ -30,7 +30,13 @@ export default function AlbumManagePage() {
   const [showQR, setShowQR] = useState(false);
   const [localIp, setLocalIp] = useState("");
 
+  
   useEffect(() => {
+    if (localStorage.getItem("admin_authenticated") !== "true") {
+      window.location.href = "/dashboard/login";
+    }
+  }, []);
+useEffect(() => {
     fetch("/api/host").then(r => r.json()).then(d => setLocalIp(d.ip)).catch(() => {});
   }, []);
   const [copied, setCopied] = useState(false);

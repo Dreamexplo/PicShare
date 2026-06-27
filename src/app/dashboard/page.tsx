@@ -17,7 +17,13 @@ export default function DashboardPage() {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => { fetchAlbums(); }, []);
+  
+  useEffect(() => {
+    if (localStorage.getItem("admin_authenticated") !== "true") {
+      window.location.href = "/dashboard/login";
+    }
+  }, []);
+useEffect(() => { fetchAlbums(); }, []);
 
   async function fetchAlbums() {
     try {
