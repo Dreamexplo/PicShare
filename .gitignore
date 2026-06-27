@@ -1,0 +1,8 @@
+﻿node_modules/
+.next/
+out/
+uploads/originals/
+uploads/thumbnails/
+uploads/*.db
+*.db
+.env.local

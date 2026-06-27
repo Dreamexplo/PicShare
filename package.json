@@ -1,0 +1,33 @@
+{
+    "name":  "picture_books",
+    "version":  "1.0.0",
+    "private":  true,
+    "scripts":  {
+                    "dev":  "next dev -H 0.0.0.0",
+                    "build":  "next build",
+                    "start":  "next start",
+                    "db:init":  "echo Use Supabase SQL editor instead - see supabase-schema.sql"
+                },
+    "dependencies":  {
+                         "next":  "^14.2.29",
+                         "react":  "^18.3.1",
+                         "react-dom":  "^18.3.1",
+                         "@supabase/supabase-js":  "^2.49.0",
+                         "sharp":  "^0.33.5",
+                         "uuid":  "^11.1.0",
+                         "qrcode":  "^1.5.4",
+                         "jszip":  "^3.10.1",
+                         "lucide-react":  "^0.468.0"
+                     },
+    "devDependencies":  {
+                            "typescript":  "^5.7.0",
+                            "@types/react":  "^18.3.0",
+                            "@types/react-dom":  "^18.3.0",
+                            "@types/node":  "^22.0.0",
+                            "@types/uuid":  "^10.0.0",
+                            "@types/qrcode":  "^1.5.5",
+                            "tailwindcss":  "^3.4.0",
+                            "postcss":  "^8.4.0",
+                            "autoprefixer":  "^10.4.0"
+                        }
+}
